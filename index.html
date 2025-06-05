@@ -4,49 +4,64 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Gyan Pratipat | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="icon" href="images/profile-placeholder.png">
 </head>
-<body>
+<body class="bg-white text-gray-900 px-6 py-10 font-sans">
 
-  <header>
-    <img src="images/profile-placeholder.jpg" alt="Gyan Pratipat" class="profile-pic" />
-    <h1>Gyan Pratipat</h1>
-    <p>Engineer • Thinker • Storyteller</p>
-    <p class="max-w-xl mx-auto mt-4">
+  <div class="text-center mb-12">
+    <img src="images/profile-placeholder.jpg" alt="Gyan Pratipat" class="mx-auto mb-6 w-40 h-40 rounded-full object-cover border-4 border-gray-300" />
+    <h1 class="text-5xl font-bold">Gyan Pratipat</h1>
+    <p class="text-xl text-gray-600 mt-2">Engineer • Thinker • Storyteller</p>
+    <p class="mt-4 max-w-2xl mx-auto text-base text-gray-700">
       Passionate about bridging the world of microelectronics and human understanding. With experience in processor design, verification, and philosophical writing, I thrive at the intersection of technology and introspection.
     </p>
-    <a href="resume.pdf" target="_blank" class="inline-block bg-white text-blue-600 px-4 py-2 mt-4 rounded shadow hover:bg-blue-100">📄 View Resume</a>
-  </header>
+    <div class="mt-4">
+      <a href="resume.pdf" target="_blank" class="inline-block bg-blue-600 text-white px-4 py-2 rounded mt-2 hover:bg-blue-700">📄 View Resume</a>
+    </div>
+  </div>
 
-  <section id="projects">
-    <h2>Work That Speaks</h2>
-    <ul>
-      <li><strong>RISC-V Processor Design</strong> — Designed a RISC-V processor with pipeline stages and hazard detection.</li>
-      <li><strong>UVM Testbench for AXI</strong> — Developed a Universal Verification Methodology testbench for AXI protocol.</li>
-      <li><strong>Branch Prediction Algorithm</strong> — Implemented a custom branch prediction mechanism to optimize execution.</li>
+  <section class="mb-16">
+    <h2 class="text-2xl font-semibold mb-4">Work That Speaks</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold">RISC-V Processor Design</h3>
+        <p class="text-gray-700 mt-2">Designed a RISC-V processor with pipeline stages and hazard detection.</p>
+        <a href="#"><button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Project</button></a>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold">UVM Testbench for AXI</h3>
+        <p class="text-gray-700 mt-2">Developed a Universal Verification Methodology testbench for AXI protocol.</p>
+        <a href="#"><button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Project</button></a>
+      </div>
+      <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
+        <h3 class="text-xl font-semibold">Branch Prediction Algorithm</h3>
+        <p class="text-gray-700 mt-2">Implemented a custom branch prediction mechanism to optimize execution.</p>
+        <a href="#"><button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Project</button></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mb-16">
+    <h2 class="text-2xl font-semibold mb-4">Words I've Weaved</h2>
+    <ul class="list-disc list-inside text-gray-800 space-y-2">
+      <li><a href="#" class="text-blue-600 hover:underline">Rivers Don’t Ask for Names – A Poem</a></li>
+      <li><a href="#" class="text-blue-600 hover:underline">When Silence is Loud – Micro-thought</a></li>
+      <li><a href="#" class="text-blue-600 hover:underline">The City That Forgot – Short Story</a></li>
     </ul>
   </section>
 
-  <section id="writing">
-    <h2>Words I've Weaved</h2>
-    <ul>
-      <li><a href="#">Rivers Don’t Ask for Names – A Poem</a></li>
-      <li><a href="#">When Silence is Loud – Micro-thought</a></li>
-      <li><a href="#">The City That Forgot – Short Story</a></li>
+  <section class="mb-16">
+    <h2 class="text-2xl font-semibold mb-4">Kitchen Chronicles</h2>
+    <ul class="list-disc list-inside text-gray-800 space-y-2">
+      <li><a href="#" class="text-green-600 hover:underline">Stuffed Bitter Gourd (Bharwan Karela)</a></li>
+      <li><a href="#" class="text-green-600 hover:underline">Ragi-Moong Chilla with Curd Dip</a></li>
+      <li><a href="#" class="text-green-600 hover:underline">Lauki Halwa — A Comfort Dessert</a></li>
     </ul>
   </section>
 
-  <section id="recipes">
-    <h2>Kitchen Chronicles</h2>
-    <ul>
-      <li><a href="#">Stuffed Bitter Gourd (Bharwan Karela)</a></li>
-      <li><a href="#">Ragi-Moong Chilla with Curd Dip</a></li>
-      <li><a href="#">Lauki Halwa — A Comfort Dessert</a></li>
-    </ul>
-  </section>
-
-  <section id="gallery">
-    <h2>Still Moments</h2>
+  <section class="mb-16">
+    <h2 class="text-2xl font-semibold mb-4">Still Moments</h2>
     <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
       <img src="images/photo1.jpg" alt="Moment 1" class="rounded-xl shadow-md" />
       <img src="images/photo2.jpg" alt="Moment 2" class="rounded-xl shadow-md" />
@@ -55,20 +70,19 @@
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Find Me On</h2>
-    <ul class="social-media">
-      <li><a href="https://github.com/gyanpratipat" target="_blank">GitHub</a></li>
-      <li><a href="https://linkedin.com/in/gyanpratipat" target="_blank">LinkedIn</a></li>
-      <li><a href="mailto:email@example.com">Email</a></li>
-      <li><a href="https://medium.com/@gpratipa" target="_blank">Medium</a></li>
-      <li><a href="https://www.quora.com/profile/Gyan-Pratipat" target="_blank">Quora</a></li>
-    </ul>
+  <section class="text-center mb-16">
+    <h2 class="text-2xl font-semibold mb-4">Find Me On</h2>
+    <div class="flex justify-center gap-6 text-2xl">
+      <a href="https://github.com/gyanpratipat" target="_blank">🐙</a>
+      <a href="https://linkedin.com/in/gyanpratipat" target="_blank">🔗</a>
+      <a href="mailto:email@example.com">📧</a>
+      <a href="https://medium.com/@gpratipa" target="_blank">✍️</a>
+      <a href="https://www.quora.com/profile/Gyan-Pratipat" target="_blank">❓</a>
+    </div>
   </section>
 
-  <footer>
+  <footer class="text-center text-gray-500 text-sm">
     © 2025 Gyan Pratipat — All rights reserved.
   </footer>
-
 </body>
 </html>
