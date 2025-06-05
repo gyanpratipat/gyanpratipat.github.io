@@ -1,2 +1,3 @@
-# ZamasuZamasu.github.io
-Engineering Portfolio
+# gyanpratipat.github.io
+Portfolio Website
+
