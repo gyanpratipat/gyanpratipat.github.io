@@ -1,113 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<link rel="stylesheet" href="style.css">
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Gyan Pratipat</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gyan Pratipat | Portfolio</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-white text-gray-900 px-6 py-10">
+    <div class="text-center mb-12">
+      <h1 class="text-5xl font-bold">Gyan Pratipat</h1>
+      <p class="text-xl text-gray-600 mt-2">Engineer • Thinker • Storyteller</p>
+    </div>
 
-    header {
-      background-color: #282c34;
-      color: white;
-      padding: 2rem;
-      text-align: center;
-    }
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold mb-4">Work That Speaks</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
+          <h3 class="text-xl font-semibold">RISC-V Processor Design</h3>
+          <p class="text-gray-700 mt-2">Designed a RISC-V processor with pipeline stages and hazard detection.</p>
+          <a href="#"><button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Project</button></a>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
+          <h3 class="text-xl font-semibold">UVM Testbench for AXI</h3>
+          <p class="text-gray-700 mt-2">Developed a Universal Verification Methodology testbench for AXI protocol.</p>
+          <a href="#"><button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Project</button></a>
+        </div>
+        <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
+          <h3 class="text-xl font-semibold">Branch Prediction Algorithm</h3>
+          <p class="text-gray-700 mt-2">Implemented a custom branch prediction mechanism to optimize execution.</p>
+          <a href="#"><button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Project</button></a>
+        </div>
+      </div>
+    </section>
 
-    .profile-pic {
-      display: block;
-      margin: 20px auto;
-      border-radius: 50%;
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      border: 4px solid #fff;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    }
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold mb-4">Words I've Weaved</h2>
+      <ul class="list-disc list-inside text-gray-800 space-y-2">
+        <li><a class="text-blue-600 hover:underline" href="#">Rivers Don’t Ask for Names – A Poem</a></li>
+        <li><a class="text-blue-600 hover:underline" href="#">When Silence is Loud – Micro-thought</a></li>
+        <li><a class="text-blue-600 hover:underline" href="#">The City That Forgot – Short Story</a></li>
+      </ul>
+    </section>
 
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
+    <section class="mb-16">
+      <h2 class="text-2xl font-semibold mb-4">Still Moments</h2>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+        <img src="images/photo1.jpg" alt="moment" class="rounded-xl shadow-md" />
+        <img src="images/photo2.jpg" alt="moment" class="rounded-xl shadow-md" />
+        <img src="images/photo3.jpg" alt="moment" class="rounded-xl shadow-md" />
+        <img src="images/photo4.jpg" alt="moment" class="rounded-xl shadow-md" />
+      </div>
+    </section>
 
-    h2 {
-      border-bottom: 2px solid #ddd;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-      color: #444;
-    }
+    <section class="text-center mb-16">
+      <h2 class="text-2xl font-semibold mb-4">Find Me On</h2>
+      <div class="flex justify-center gap-6 text-2xl">
+        <a href="https://github.com/gyanpratipat" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/gyanpratipat" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:email@example.com"><i class="fas fa-envelope"></i></a>
+        <a href="https://medium.com/@gpratipa" target="_blank"><i class="fab fa-medium"></i></a>
+        <a href="https://www.quora.com/profile/Gyan-Pratipat" target="_blank"><i class="fab fa-quora"></i></a>
+      </div>
+    </section>
 
-    .contacts, .social-media {
-      list-style: none;
-      padding: 0;
-    }
-
-    .contacts li, .social-media li {
-      margin: 10px 0;
-    }
-
-    .social-media a {
-      text-decoration: none;
-      color: #0077cc;
-    }
-
-    footer {
-      background-color: #282c34;
-      color: white;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 40px;
-    }
-  </style>
-</head>
-
-
-<body>
-
-  <header>
-    <img src="ProfilePic.png" alt="Profile Picture" class="profile-pic">
-    <h1>Gyan Pratipat</h1>
-  </header>
-
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      <!-- Replace with your about content -->
-      Hello! I am Gyan Pratipat, and this is where I share a bit about myself.
-    </p>
-  </section>
-
-  <section id="contacts">
-    <h2>Contact Information</h2>
-    <ul class="contacts">
-      <li>Email: gyan@example.com</li>
-      <li>Phone: +91-1234567890</li>
-      <li>Location: India</li>
-    </ul>
-  </section>
-
-  <section id="social">
-    <h2>Find Me Online</h2>
-    <ul class="social-media">
-      <li><a href="https://twitter.com/yourhandle" target="_blank">Twitter</a></li>
-      <li><a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a></li>
-      <li><a href="https://github.com/yourusername" target="_blank">GitHub</a></li>
-      <li><a href="https://instagram.com/yourprofile" target="_blank">Instagram</a></li>
-    </ul>
-  </section>
-
-  <footer>
-    &copy; 2025 Gyan Pratipat. All rights reserved.
-  </footer>
-
-</body>
+    <footer class="text-center text-gray-500 text-sm">
+      © 2025 Gyan Pratipat — All rights reserved.
+    </footer>
+  </body>
 </html>
-
