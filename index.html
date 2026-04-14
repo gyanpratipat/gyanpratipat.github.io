@@ -1,103 +1,755 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Gyan Pratipat | Portfolio</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="images/Logo_clr.png">
-</head>
-<body class="bg-white text-gray-900 px-6 py-10 font-sans">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Gyan Pratipat - Engineer for life</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;700;800&family=DM+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
 
-  <div class="text-center mb-12">
-    <img src="images/profile-placeholder.png" alt="Gyan Pratipat" class="mx-auto mb-6 w-40 h-40 rounded-full object-cover border-4 border-gray-300" />
-    <h1 class="text-5xl font-bold">Gyan Pratipat</h1>
-    <p class="text-xl text-gray-600 mt-2">Engineer • Thinker • Storyteller</p>
-    <p class="mt-4 max-w-2xl mx-auto text-base text-gray-700">
-     I am an engineer specializing in computer architecture, computer systems, and quantum computing. Currently pursuing an MS in Computer Engineering at Arizona State University, I am on leave from my role as a Scientist at Centre for Development of Advanced Computing. I hold a BTech in ECE from NIT Srinagar (2021) and have industry experience at Coherent Corp., where I developed test solutions for optoelectronic components.
-     Beyond technology, I am deeply interested in Indian philosophy and theology, which shape my worldview and often inspire a more reflective, ethical, and human-centered approach to engineering and research.</p>
-    <div class="mt-4">
-      <a href="Gyan_Pratipat_Resume_Software_Engineering_Roles.pdf" target="_blank" class="inline-block bg-blue-600 text-white px-4 py-2 rounded mt-2 hover:bg-blue-700">📄 View Resume</a>
+/* ── DARK (default) ── */
+body {
+  background: #040810;
+  color: #c8d8e8;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+  transition: background 0.35s, color 0.35s;
+}
+
+/* ── LIGHT OVERRIDES ── */
+body.light { background: #f0f4f8; color: #2a3a4a; }
+body.light nav { background: rgba(235,242,250,0.95) !important; border-bottom-color: rgba(0,140,180,0.2) !important; }
+body.light .nav-logo { color: #0077aa !important; }
+body.light .nav-logo span { color: #b86c00 !important; }
+body.light .nav-links a { color: #7a90a0 !important; }
+body.light .nav-links a:hover { color: #0077aa !important; }
+body.light .nav-links a::after { background: #0077aa !important; }
+body.light .theme-toggle { border-color: rgba(0,140,180,0.3) !important; color: #7a90a0 !important; }
+body.light #hero { background: #f0f4f8; }
+body.light .hero-tag { color: #b86c00 !important; }
+body.light .hero-tag::before { background: #b86c00 !important; }
+body.light .hero-name { color: #0a1a2a !important; }
+body.light .hero-name .accent { color: #0077aa !important; }
+body.light .hero-title { color: #7a90a0 !important; }
+body.light .hero-title span { color: rgba(0,119,170,0.7) !important; }
+body.light .hero-desc { color: #2a3a4a !important; }
+body.light .btn-primary { background: #0077aa !important; color: #fff !important; }
+body.light .btn-outline { border-color: rgba(0,140,180,0.45) !important; color: rgba(0,119,170,0.8) !important; }
+body.light .hero-terminal { background: #ffffff !important; border-color: rgba(0,140,180,0.2) !important; box-shadow: 0 4px 40px rgba(0,0,0,0.1) !important; }
+body.light .terminal-bar { background: rgba(0,0,0,0.03) !important; border-bottom-color: rgba(0,140,180,0.15) !important; }
+body.light .terminal-title { color: #7a90a0 !important; }
+body.light .t-prompt { color: #0077aa !important; }
+body.light .t-cmd { color: #0a1a2a !important; }
+body.light .t-comment { color: #7a90a0 !important; }
+body.light .t-key { color: #b86c00 !important; }
+body.light .t-val { color: #1a7a3a !important; }
+body.light .t-cursor { background: #0077aa !important; }
+body.light #skills { background: #e2eaf4 !important; }
+body.light #projects { background: #f0f4f8 !important; }
+body.light #experience { background: #e2eaf4 !important; }
+body.light #contact { background: #f0f4f8 !important; }
+body.light footer { background: #f0f4f8 !important; border-top-color: rgba(0,140,180,0.18) !important; }
+body.light footer p { color: #7a90a0 !important; }
+body.light .section-label { color: #b86c00 !important; }
+body.light .section-title { color: #0a1a2a !important; }
+body.light .section-subtitle { color: #7a90a0 !important; }
+body.light .skill-card { background: #ffffff !important; border-color: rgba(0,140,180,0.18) !important; }
+body.light .skill-card p { color: #7a90a0 !important; }
+body.light .skill-name { color: #0a1a2a !important; }
+body.light .tag { border-color: rgba(0,140,180,0.22) !important; color: rgba(0,119,170,0.8) !important; background: rgba(0,119,170,0.05) !important; }
+body.light .project-card { background: #ffffff !important; border-color: rgba(0,140,180,0.18) !important; }
+body.light .project-name { color: #0a1a2a !important; }
+body.light .project-desc { color: #2a3a4a !important; }
+body.light .project-link { color: rgba(0,119,170,0.8) !important; }
+body.light .timeline::before { background: linear-gradient(to bottom, #0077aa, transparent) !important; }
+body.light .timeline-item::before { border-color: #0077aa !important; background: #f0f4f8 !important; box-shadow: 0 0 8px rgba(0,119,170,0.3) !important; }
+body.light .timeline-item::after { background: rgba(0,119,170,0.2) !important; }
+body.light .tl-role { color: #0a1a2a !important; }
+body.light .tl-company { color: #0077aa !important; }
+body.light .tl-meta { color: #7a90a0 !important; }
+body.light .tl-desc { color: #2a3a4a !important; }
+body.light .timeline::before { background: linear-gradient(to bottom, #0077aa, transparent) !important; }
+body.light .timeline-item::before { border-color: #0077aa !important; background: #f0f4f8 !important; }
+body.light .contact-email { color: #0077aa !important; }
+body.light .social-links a { color: #7a90a0 !important; }
+body.light #hero::after {
+  background-image:
+    linear-gradient(rgba(0,119,170,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,119,170,0.05) 1px, transparent 1px) !important;
+}
+body.light #hero::before { background: radial-gradient(circle, rgba(0,119,170,0.07) 0%, transparent 70%) !important; }
+body.light body::before, body.light body::after { display: none; }
+
+/* ── SCANLINES ── */
+body::before {
+  content: '';
+  position: fixed; inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.06) 2px, rgba(0,0,0,0.06) 4px);
+  pointer-events: none; z-index: 9999;
+}
+body.light::before { display: none; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1.2rem 4rem;
+  background: rgba(4,8,16,0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(0,200,255,0.12);
+  transition: background 0.35s, border-color 0.35s;
+}
+.nav-logo { font-family: 'Share Tech Mono', monospace; font-size: 0.85rem; color: #00c8ff; letter-spacing: 0.1em; text-decoration: none; transition: color 0.35s; }
+.nav-logo span { color: #ffb347; transition: color 0.35s; }
+.nav-links { display: flex; gap: 2.5rem; list-style: none; }
+.nav-links a { font-family: 'Share Tech Mono', monospace; font-size: 0.9rem; font-weight: 700; color: #5a7080; text-decoration: none; letter-spacing: 0.08em; transition: color 0.2s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -3px; left: 0; right: 0; height: 1px; background: #00c8ff; transform: scaleX(0); transform-origin: left; transition: transform 0.25s; }
+.nav-links a:hover { color: #00c8ff; }
+.nav-links a:hover::after { transform: scaleX(1); }
+.nav-actions { display: flex; align-items: center; gap: 1rem; }
+.theme-toggle {
+  background: none; border: 1px solid rgba(0,200,255,0.2); cursor: pointer;
+  width: 36px; height: 36px; border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1rem; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.theme-toggle:hover { border-color: #00c8ff; box-shadow: 0 0 12px rgba(0,200,255,0.3); }
+
+/* ── HERO ── */
+#hero {
+  min-height: 100vh; display: flex; align-items: center; justify-content: center;
+  padding: 7rem 4rem 4rem; position: relative; overflow: hidden;
+  background: #040810; transition: background 0.35s;
+}
+#hero::before {
+  content: ''; position: absolute; top: 20%; left: 55%;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(0,200,255,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+#hero::after {
+  content: ''; position: absolute; inset: 0;
+  background-image: linear-gradient(rgba(0,200,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,200,255,0.03) 1px, transparent 1px);
+  background-size: 60px 60px; pointer-events: none;
+}
+/* Hero layout: full-width content column */
+.hero-content {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 1100px;
+  display: flex; flex-direction: column; gap: 0;
+}
+
+/* Row 1: left block + photo side by side */
+.hero-top-row {
+  display: flex; align-items: flex-start;
+  justify-content: space-between; gap: 3rem;
+  margin-bottom: 0;
+  opacity: 0; animation: fadeUp 0.6s 0.2s forwards;
+}
+.hero-left {
+  flex: 1; display: flex; flex-direction: column; gap: 0;
+}
+.hero-name-block { display: flex; flex-direction: column; gap: 0.3rem; margin-bottom: 1.2rem; }
+.hero-tag {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.72rem;
+  color: #ffb347; letter-spacing: 0.15em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 0.75rem; transition: color 0.35s;
+}
+.hero-tag::before { content: ''; display: inline-block; width: 32px; height: 1px; background: #ffb347; transition: background 0.35s; }
+.hero-name {
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: clamp(2.8rem, 6vw, 5.5rem); line-height: 1;
+  color: #eaf4ff; letter-spacing: -0.02em;
+  white-space: nowrap; transition: color 0.35s;
+}
+.hero-name .accent { color: #00c8ff; transition: color 0.35s; }
+
+/* Profile photo - height/width set by JS to match heroLeft height */
+.hero-photo-wrap {
+  flex-shrink: 0; position: relative;
+}
+.hero-photo {
+  width: 100%; height: 100%; border-radius: 4px; object-fit: cover; display: block;
+  border: 2px solid rgba(0,200,255,0.25);
+  box-shadow: 0 0 30px rgba(0,200,255,0.12);
+  transition: border-color 0.35s, box-shadow 0.35s;
+}
+body.light .hero-photo { border-color: rgba(0,119,170,0.3); }
+
+/* Row 2: title */
+.hero-title {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.95rem;
+  color: #5a7080; letter-spacing: 0.06em; margin-bottom: 1.2rem;
+  transition: color 0.35s;
+}
+.hero-title span { color: rgba(0,200,255,0.6); transition: color 0.35s; }
+
+/* Row 3: desc */
+.hero-desc {
+  font-size: 1.02rem; color: #c8d8e8; max-width: 680px; line-height: 1.8; margin-bottom: 2rem;
+  transition: color 0.35s;
+}
+
+/* Row 4: buttons */
+.hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0; }
+.btn {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.8rem; letter-spacing: 0.1em;
+  text-decoration: none; padding: 0.8rem 1.8rem; border-radius: 2px;
+  transition: all 0.25s; display: inline-flex; align-items: center; gap: 0.5rem;
+}
+.btn-primary { background: #00c8ff; color: #040810; font-weight: 700; }
+.btn-primary:hover { background: #fff; box-shadow: 0 0 18px rgba(0,200,255,0.4); transform: translateY(-2px); }
+.btn-outline { border: 1px solid rgba(0,200,255,0.4); color: rgba(0,200,255,0.7); }
+.btn-outline:hover { border-color: #00c8ff; color: #00c8ff; box-shadow: 0 0 18px rgba(0,200,255,0.35); transform: translateY(-2px); }
+
+/* Row 5: terminal — full width, horizontal */
+.hero-terminal {
+  width: 100%; margin-top: 2.5rem;
+  background: #0b1222; border: 1px solid rgba(0,200,255,0.12);
+  border-radius: 6px; font-family: 'Share Tech Mono', monospace; font-size: 0.78rem;
+  overflow: hidden; box-shadow: 0 0 60px rgba(0,0,0,0.5);
+  opacity: 0; animation: fadeUp 0.8s 0.85s forwards; z-index: 2;
+  transition: background 0.35s, border-color 0.35s;
+}
+.terminal-bar {
+  background: rgba(255,255,255,0.04); padding: 0.6rem 1rem;
+  display: flex; align-items: center; gap: 0.5rem;
+  border-bottom: 1px solid rgba(0,200,255,0.12); transition: background 0.35s;
+}
+.terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+.terminal-dot.red { background: #ff4560; }
+.terminal-dot.yellow { background: #ffb347; }
+.terminal-dot.green { background: #00e676; }
+.terminal-title { margin-left: auto; color: #5a7080; font-size: 0.7rem; }
+.terminal-body {
+  padding: 1.2rem 1.4rem; line-height: 2;
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 0 2rem;
+}
+.terminal-col { display: flex; flex-direction: column; }
+.t-prompt { color: #00c8ff; transition: color 0.35s; }
+.t-cmd { color: #eaf4ff; transition: color 0.35s; }
+.t-comment { color: #5a7080; transition: color 0.35s; }
+.t-key { color: #ffb347; transition: color 0.35s; }
+.t-val { color: #a0e8a0; transition: color 0.35s; }
+.t-cursor { display: inline-block; width: 8px; height: 1em; background: #00c8ff; vertical-align: text-bottom; animation: blink 1s step-end infinite; transition: background 0.35s; }
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ── SECTIONS ── */
+section { padding: 6rem 4rem; transition: background 0.35s; }
+#skills { background: #070d1a; }
+#projects { background: #040810; }
+#experience { background: #070d1a; }
+#contact { background: #040810; text-align: center; position: relative; overflow: hidden; padding: 7rem 4rem; }
+#contact::before {
+  content: ''; position: absolute; bottom: -200px; left: 50%; transform: translateX(-50%);
+  width: 800px; height: 400px;
+  background: radial-gradient(ellipse, rgba(0,200,255,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.section-label {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.72rem; letter-spacing: 0.18em;
+  color: #ffb347; text-transform: uppercase; margin-bottom: 0.75rem;
+  display: flex; align-items: center; gap: 0.75rem; transition: color 0.35s;
+}
+.section-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, rgba(0,200,255,0.4), transparent); }
+.section-title {
+  font-family: 'Syne', sans-serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 800;
+  color: #eaf4ff; letter-spacing: -0.02em; line-height: 1.1; margin-bottom: 1rem; transition: color 0.35s;
+}
+.section-subtitle { color: #5a7080; max-width: 540px; margin-bottom: 3.5rem; font-size: 1.05rem; font-weight: 600; transition: color 0.35s; }
+
+/* Skills */
+.skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5px; }
+.skill-card:nth-child(5) { grid-column: 2; }
+.skill-card:nth-child(6) { grid-column: 3; }
+.skill-card {
+  background: #0b1222; border: 1px solid rgba(0,200,255,0.12); padding: 1.8rem;
+  position: relative; overflow: hidden; transition: border-color 0.25s, transform 0.25s, background 0.35s; cursor: default;
+}
+.skill-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: #00c8ff; transform: scaleX(0); transform-origin: left; transition: transform 0.35s;
+}
+.skill-card:hover { border-color: rgba(0,200,255,0.4); transform: translateY(-3px); box-shadow: 0 0 18px rgba(0,200,255,0.35); }
+.skill-card:hover::before { transform: scaleX(1); }
+.skill-icon { font-size: 1.4rem; margin-bottom: 0.8rem; }
+.skill-name { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; color: #eaf4ff; margin-bottom: 0.5rem; transition: color 0.35s; }
+.skill-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.8rem; }
+.tag {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; padding: 0.2rem 0.5rem;
+  border: 1px solid rgba(0,200,255,0.12); color: rgba(0,200,255,0.6);
+  border-radius: 2px; letter-spacing: 0.05em; transition: border-color 0.35s, color 0.35s;
+}
+
+/* Projects */
+.projects-list { display: flex; flex-direction: column; gap: 1.5rem; }
+.project-card {
+  background: #0b1222; border: 1px solid rgba(0,200,255,0.12); padding: 2rem 2.5rem;
+  display: grid; grid-template-columns: 1fr auto; align-items: start; gap: 1rem 2rem;
+  transition: border-color 0.25s, box-shadow 0.25s, background 0.35s; position: relative; overflow: hidden;
+}
+.project-card::after {
+  content: attr(data-index); position: absolute; right: -0.5rem; top: -1rem;
+  font-family: 'Syne', sans-serif; font-size: 7rem; font-weight: 800;
+  color: rgba(0,200,255,0.03); line-height: 1; pointer-events: none;
+}
+.project-card:hover { border-color: rgba(0,200,255,0.3); box-shadow: inset 0 0 60px rgba(0,200,255,0.03); }
+.project-badge {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.65rem; letter-spacing: 0.1em;
+  padding: 0.25rem 0.6rem; border-radius: 2px; margin-bottom: 0.75rem; display: inline-block;
+}
+.badge-sw { background: rgba(0,200,255,0.1); color: #00c8ff; border: 1px solid rgba(0,200,255,0.2); }
+.badge-hw { background: rgba(255,179,71,0.1); color: #ffb347; border: 1px solid rgba(255,179,71,0.2); }
+.badge-ai { background: rgba(160,100,255,0.1); color: #c070ff; border: 1px solid rgba(160,100,255,0.2); }
+.project-name { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; color: #eaf4ff; margin-bottom: 0.5rem; transition: color 0.35s; }
+.project-desc { color: #c8d8e8; font-size: 0.95rem; max-width: 600px; transition: color 0.35s; }
+.project-link {
+  font-family: 'Share Tech Mono', monospace; font-size: 0.75rem; color: rgba(0,200,255,0.6);
+  text-decoration: none; letter-spacing: 0.05em; white-space: nowrap;
+  display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s;
+}
+.project-link:hover { color: #00c8ff; }
+.project-link::after { content: '→'; }
+
+/* Timeline — alternating left/right */
+.timeline {
+  position: relative;
+  padding: 0;
+}
+/* Centre spine */
+.timeline::before {
+  content: ''; position: absolute;
+  left: 50%; top: 0; bottom: 0;
+  width: 1px; transform: translateX(-50%);
+  background: linear-gradient(to bottom, #00c8ff, transparent);
+  transition: background 0.35s;
+}
+.timeline-item {
+  position: relative;
+  width: 44%;
+  padding: 0 0 3.5rem 0;
+}
+.timeline-item.tl-left {
+  margin-left: 0;
+  text-align: right;
+  padding-right: 3rem;
+}
+.timeline-item.tl-right {
+  margin-left: 56%;
+  text-align: left;
+  padding-left: 3rem;
+}
+.timeline-item.tl-left::before {
+  right: -5.5px; left: auto;
+}
+.timeline-item.tl-right::before {
+  left: -5.5px; right: auto;
+}
+.timeline-item.tl-left::after {
+  content: ''; position: absolute; top: 11px;
+  right: 0; width: 3rem; height: 1px;
+  background: rgba(0,200,255,0.2);
+}
+.timeline-item.tl-right::after {
+  content: ''; position: absolute; top: 11px;
+  left: 0; width: 3rem; height: 1px;
+  background: rgba(0,200,255,0.2);
+}
+.tl-meta {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem; font-weight: 700;
+  color: #5a7080; letter-spacing: 0.08em;
+  margin-bottom: 0.4rem; transition: color 0.35s;
+}
+.tl-role {
+  font-family: 'Syne', sans-serif; font-weight: 700;
+  font-size: 1.15rem; color: #eaf4ff;
+  margin-bottom: 0.2rem; transition: color 0.35s;
+}
+.tl-company {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 0.85rem; color: rgba(0,200,255,0.6);
+  margin-bottom: 0.8rem; transition: color 0.35s;
+}
+.tl-desc { font-size: 0.95rem; color: #c8d8e8; transition: color 0.35s; }
+
+/* Light mode dot background */
+body.light .timeline-item::before { background: #f0f4f8 !important; }
+
+/* Responsive: collapse to single column on small screens */
+@media (max-width: 768px) {
+  .timeline::before { left: 0; transform: none; }
+  .timeline-item { width: 100%; margin-left: 0 !important; text-align: left !important; padding-left: 2.5rem !important; padding-right: 0 !important; }
+  .timeline-item::before { left: -5.5px !important; right: auto !important; }
+  .timeline-item::after { display: none; }
+}
+
+/* Contact */
+.contact-email {
+  font-family: 'Syne', sans-serif; font-size: clamp(1.8rem, 4vw, 3rem); font-weight: 800;
+  color: #00c8ff; text-decoration: none; display: inline-block; margin: 1.5rem 0;
+  transition: text-shadow 0.3s, color 0.35s;
+}
+.contact-email:hover { text-shadow: 0 0 40px rgba(0,200,255,0.5); }
+.social-links { display: flex; justify-content: center; gap: 2rem; margin-top: 2rem; }
+.social-links a { font-family: 'Share Tech Mono', monospace; font-size: 1rem; font-weight: 700; color: #5a7080; text-decoration: none; letter-spacing: 0.08em; transition: color 0.2s; }
+.social-links a:hover { color: #00c8ff; }
+
+/* Footer */
+footer {
+  border-top: 1px solid rgba(0,200,255,0.12); padding: 1.5rem 4rem;
+  display: flex; justify-content: space-between; align-items: center;
+  transition: background 0.35s, border-color 0.35s;
+}
+footer p { font-family: 'Share Tech Mono', monospace; font-size: 0.88rem; font-weight: 600; color: #5a7080; letter-spacing: 0.05em; transition: color 0.35s; }
+.status-dot {
+  display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: #00e676; box-shadow: 0 0 6px #00e676; margin-right: 0.4rem;
+  animation: pulse 2s infinite;
+}
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+/* Animations */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeLeft { from { opacity: 0; transform: translate(30px, -50%); } to { opacity: 1; transform: translate(0, -50%); } }
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.6s, transform 0.6s; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+/* Responsive */
+@media (max-width: 1000px) {
+  nav { padding: 1rem 1.5rem; }
+  .nav-links { gap: 1.2rem; }
+  section { padding: 4rem 1.5rem; }
+  #hero { padding: 5rem 1.5rem 3rem; align-items: flex-start; }
+  .hero-name { font-size: clamp(2.2rem, 8vw, 3.5rem); white-space: normal; }
+  .skills-grid { grid-template-columns: repeat(2, 1fr) !important; }
+  .skill-card:nth-child(5), .skill-card:nth-child(6) { grid-column: auto; }
+  .terminal-body { grid-template-columns: 1fr 1fr; }
+  .project-card { grid-template-columns: 1fr; }
+  footer { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+@media (max-width: 600px) {
+  .nav-links { display: none; }
+  .hero-top-row { flex-direction: column-reverse; align-items: flex-start; gap: 1.2rem; }
+  .hero-photo-wrap { align-self: auto; }
+  .hero-photo, .hero-photo-placeholder { width: 80px; height: 80px; aspect-ratio: 1; }
+  .terminal-body { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#hero">GS<span>://</span>portfolio</a>
+  <ul class="nav-links">
+    <li><a href="#skills">skills</a></li>
+    <li><a href="#projects">projects</a></li>
+    <li><a href="#experience">experience</a></li>
+    <li><a href="#contact">contact</a></li>
+  </ul>
+  <div class="nav-actions">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" title="Toggle light/dark mode">
+      🌙
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-content">
+
+    <!-- Row 1: Left block (name+tag) and Photo side by side -->
+    <div class="hero-top-row">
+      <div class="hero-left" id="heroLeft">
+        <div class="hero-name-block">
+          <div class="hero-tag">MS Computer Engineering · ASU · May 2026</div>
+          <h1 class="hero-name">Gyan <span class="accent">Pratipat</span></h1>
+        </div>
+
+        <!-- Row 2: Subtitle -->
+        <p class="hero-title"><span>// </span>CPU architect by training. Product builder by instinct</p>
+
+        <!-- Row 3: About -->
+        <p class="hero-desc">
+          I sit at the intersection of hardware architecture and software systems — I've designed CPUs in SystemVerilog, scaled quantum simulators on supercomputers, and shipped consumer apps to the App Store. I think in systems, build in code, and own the full stack from transistor to user experience.
+        </p>
+
+        <!-- Row 4: Buttons -->
+        <div class="hero-cta">
+          <a href="resume.pdf" download="Gyan_Singh_Resume.pdf" class="btn btn-primary">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2">
+              <path d="M8 2v8M5 7l3 3 3-3M3 13h10" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Download Resume
+          </a>
+          <a href="#contact" class="btn btn-outline">Get in Touch</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" id="heroPhoto" src="photo.jpg" alt="Gyan Pratipat"/>
+      </div>
+    </div>
+
+    <!-- Row 5: Terminal (full width, horizontal) -->
+    <div class="hero-terminal">
+      <div class="terminal-bar">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+        <span class="terminal-title">gyan@portfolio ~ </span>
+      </div>
+      <div class="terminal-body">
+        <!-- Col 1: whoami -->
+        <div class="terminal-col">
+          <div><span class="t-prompt">❯ </span><span class="t-cmd">whoami</span></div>
+          <div><span class="t-val">gyan_pratipat</span></div>
+          <br>
+          <div><span class="t-prompt">❯ </span><span class="t-cmd">echo $LOCATION</span></div>
+          <div><span class="t-val">Tempe, AZ · Open to relocate</span></div>
+        </div>
+        <!-- Col 2: profile -->
+        <div class="terminal-col">
+          <div><span class="t-prompt">❯ </span><span class="t-cmd">cat profile.json</span></div>
+          <div><span class="t-comment">{</span></div>
+          <div>&nbsp;&nbsp;<span class="t-key">"role"</span>: <span class="t-val">"Tech Lead"</span>,</div>
+          <div>&nbsp;&nbsp;<span class="t-key">"target"</span>: <span class="t-val">"SWE · Systems"</span>,</div>
+          <div>&nbsp;&nbsp;<span class="t-key">"yoe"</span>: <span class="t-val">"3+ years"</span></div>
+          <div><span class="t-comment">}</span></div>
+        </div>
+        <!-- Col 3: ls -->
+        <div class="terminal-col">
+          <div><span class="t-prompt">❯ </span><span class="t-cmd">ls skills/</span></div>
+          <div><span class="t-val">SystemVerilog/</span></div>
+          <div><span class="t-val">CUDA/</span></div>
+          <div><span class="t-val">gem5/</span></div>
+          <div><span class="t-val">Flutter/</span></div>
+          <div><span class="t-prompt">❯ </span><span class="t-cursor"></span></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">01 · Expertise</div>
+  <h2 class="section-title">Skills &amp; Domains</h2>
+  <p class="section-subtitle">A hybrid skill set spanning hardware design, systems software, and product engineering.</p>
+  <div class="skills-grid">
+    <div class="skill-card reveal">
+      <div class="skill-icon">🖥</div>
+      <div class="skill-name">CPU Architecture</div>
+      <p style="font-size:0.9rem;color:#5a7080">Pipelined MIPS, hazard detection, cache design, Gem5 performance modeling</p>
+      <div class="skill-tags"><span class="tag">SystemVerilog</span><span class="tag">Gem5</span><span class="tag">MIPS</span><span class="tag">CAM Cache</span></div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">⚡</div>
+      <div class="skill-name">VLSI &amp; FPGA</div>
+      <p style="font-size:0.9rem;color:#5a7080">Digital SoC design, UVM testbenches, IR drop ML prediction, GPU/CUDA acceleration</p>
+      <div class="skill-tags"><span class="tag">UVM</span><span class="tag">FPGA</span><span class="tag">CUDA</span><span class="tag">IR Drop ML</span></div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🚀</div>
+      <div class="skill-name">OS &amp; Systems</div>
+      <p style="font-size:0.9rem;color:#5a7080">xv6 kernel mods, virtual memory, page swapping, COW fork, trap-and-emulate VM</p>
+      <div class="skill-tags"><span class="tag">xv6</span><span class="tag">PMP</span><span class="tag">Paging</span><span class="tag">Virtualization</span></div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🧠</div>
+      <div class="skill-name">AI &amp; ML Systems</div>
+      <p style="font-size:0.9rem;color:#5a7080">TinyML on embedded hardware, quantum simulator, CNN classification, LLM API integration</p>
+      <div class="skill-tags"><span class="tag">TinyML</span><span class="tag">PyTorch</span><span class="tag">Gemini API</span><span class="tag">Quantum</span></div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">📱</div>
+      <div class="skill-name">Cross-Platform Dev</div>
+      <p style="font-size:0.9rem;color:#5a7080">Flutter (iOS/Android/Web), AR camera pipelines, real-time video, AWS deployment</p>
+      <div class="skill-tags"><span class="tag">Flutter</span><span class="tag">Swift</span><span class="tag">DeepAR</span><span class="tag">AWS</span></div>
+    </div>
+    <div class="skill-card reveal">
+      <div class="skill-icon">🔧</div>
+      <div class="skill-name">Backend &amp; DevOps</div>
+      <p style="font-size:0.9rem;color:#5a7080">Laravel, Node.js, S3/CloudFront, Linux server ops, RevenueCat, WebSockets</p>
+      <div class="skill-tags"><span class="tag">Laravel</span><span class="tag">Node.js</span><span class="tag">S3/CloudFront</span><span class="tag">cPanel</span></div>
     </div>
   </div>
+</section>
 
-  <section class="mb-16">
-    <h2 class="text-2xl font-semibold mb-4">Work That Speaks</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
-        <h3 class="text-xl font-semibold">GPU-Accelerated Quantum Circuit Simulator</h3>
-        <p class="text-gray-700 mt-2">Developed a 20-qubit state vector simulator with CUDA optimization, achieving 5x speedup over CPU execution.</p>
-        <a href="[GITHUB_LINK_QUANTUM_SIMULATOR]"><button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Project</button></a>
-        <a href="Medium Link About Project"><button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Project</button></a>
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">02 · Work</div>
+  <h2 class="section-title">Selected Projects</h2>
+  <p class="section-subtitle">A mix of hardware, AI, and full-stack builds — from silicon to SaaS.</p>
+  <div class="projects-list">
+    <div class="project-card reveal" data-index="01">
+      <div>
+        <span class="project-badge badge-sw">FULL-STACK · MOBILE</span>
+        <div class="project-name">PassionMedia</div>
+        <p class="project-desc">Social media platform (iOS, Android, Web) built with Flutter + Laravel. Led a team of 6 as Tech Lead — AR camera, AI music gen, group chat, coin economy, Mapbox events, RevenueCat subscriptions, AWS S3/CloudFront deployment.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">Flutter</span><span class="tag">Laravel</span><span class="tag">DeepAR</span><span class="tag">AWS</span><span class="tag">Stability AI</span><span class="tag">Mapbox</span></div>
       </div>
-      <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
-        <h3 class="text-xl font-semibold">Static Timing Analysis Tool</h3>
-        <p class="text-gray-700 mt-2">Built a comprehensive STA tool in Python handling 100,000+ gates with netlist parsing and delay interpolation.</p>
-        <a href="[GITHUB_LINK_STA_TOOL]"><button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Project</button></a>
-      </div>
-      <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
-        <h3 class="text-xl font-semibold">CPU Performance Modeling in Gem5</h3>
-        <p class="text-gray-700 mt-2">Implemented custom GShare branch predictor and LRU cache policies, achieving 93% prediction accuracy.</p>
-        <a href="[GITHUB_LINK_GEM5_PROJECT]"><button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Project</button></a>
-      </div>
-      <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
-        <h3 class="text-xl font-semibold">FPGA Matrix Multiplication Accelerator</h3>
-        <p class="text-gray-700 mt-2">Designed synthesizable RTL with pipelined MAC units, achieving 2x speedup and 20% latency reduction.</p>
-        <a href="[GITHUB_LINK_FPGA_ACCELERATOR]"><button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Project</button></a>
-      </div>
-      <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
-        <h3 class="text-xl font-semibold">UVM Testbench for APB Protocol</h3>
-        <p class="text-gray-700 mt-2">Created comprehensive verification environment with 95% functional coverage and assertion-based testing.</p>
-        <a href="[GITHUB_LINK_UVM_TESTBENCH]"><button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Project</button></a>
-      </div>
-      <div class="bg-gray-100 p-6 rounded-2xl shadow-md">
-        <h3 class="text-xl font-semibold">Vehicle Number Plate Recognition</h3>
-        <p class="text-gray-700 mt-2">Built real-time recognition system with 3-stage pipeline, MySQL integration, and Docker containerization.</p>
-        <a href="[GITHUB_LINK_PLATE_RECOGNITION]"><button class="mt-4 bg-blue-600 text-white px-4 py-2 rounded">View Project</button></a>
-      </div>
+      <a href="https://www.passionmedia.social" class="project-link" target="_blank">passionmedia.social</a>
     </div>
-  </section>
-  <section class="mb-16">
-    <h2 class="text-2xl font-semibold mb-4">Words I've Weaved</h2>
-    <ul class="list-disc list-inside text-gray-800 space-y-2">
-      <li><a href="#" class="text-blue-600 hover:underline">Rivers Don’t Ask for Names – A Poem</a></li>
-      <li><a href="#" class="text-blue-600 hover:underline">When Silence is Loud – Micro-thought</a></li>
-      <li><a href="#" class="text-blue-600 hover:underline">The City That Forgot – Short Story</a></li>
-    </ul>
-  </section>
-
-  <section class="mb-16">
-    <h2 class="text-2xl font-semibold mb-4">Kitchen Chronicles</h2>
-    <ul class="list-disc list-inside text-gray-800 space-y-2">
-      <li><a href="#" class="text-green-600 hover:underline">Stuffed Bitter Gourd (Bharwan Karela)</a></li>
-      <li><a href="#" class="text-green-600 hover:underline">Ragi-Moong Chilla with Curd Dip</a></li>
-      <li><a href="#" class="text-green-600 hover:underline">Lauki Halwa — A Comfort Dessert</a></li>
-    </ul>
-  </section>
-
-  <section class="mb-16">
-    <h2 class="text-2xl font-semibold mb-4">Still Moments</h2>
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      <img src="images/photo1.jpg" alt="Moment 1" class="rounded-xl shadow-md" />
-      <img src="images/photo2.jpg" alt="Moment 2" class="rounded-xl shadow-md" />
-      <img src="images/photo3.jpg" alt="Moment 3" class="rounded-xl shadow-md" />
-      <img src="images/photo4.jpg" alt="Moment 4" class="rounded-xl shadow-md" />
+    <div class="project-card reveal" data-index="02">
+      <div>
+        <span class="project-badge badge-hw">HARDWARE · CPU</span>
+        <div class="project-name">Pipelined MIPS CPU + CAM Cache</div>
+        <p class="project-desc">Full 5-stage pipelined MIPS processor in SystemVerilog with forwarding, hazard detection, and a CAM-based cache. Part of EEE598 Digital SoC Design coursework at ASU.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">SystemVerilog</span><span class="tag">Pipeline</span><span class="tag">Hazard Detection</span><span class="tag">CAM Cache</span></div>
+      </div>
+      <a href="#" class="project-link">GitHub</a>
     </div>
-  </section>
-
-  <section class="text-center mb-16">
-    <h2 class="text-2xl font-semibold mb-4">Find Me On</h2>
-    <div class="flex justify-center gap-6 text-2xl">
-      <a href="https://github.com/gyanpratipat" target="_blank">🐙</a>
-      <a href="https://linkedin.com/in/gyanpratipat" target="_blank">🔗</a>
-      <a href="mailto:gyan.pratipat@gmail.com">📧</a>
-      <a href="https://medium.com/@gpratipa" target="_blank">✍️</a>
-      <a href="https://www.quora.com/profile/Gyan-Pratipat" target="_blank">❓</a>
+    <div class="project-card reveal" data-index="03">
+      <div>
+        <span class="project-badge badge-ai">AI · VEDIC ASTROLOGY</span>
+        <div class="project-name">AstroWise Therapy</div>
+        <p class="project-desc">AI-powered Vedic astrology web app using Node.js/Express, Prokerala API, and Google Gemini. Launched live at astrowise.live using free GitHub Student Pack resources.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">Node.js</span><span class="tag">Gemini API</span><span class="tag">Prokerala</span><span class="tag">Cloudflare</span></div>
+      </div>
+      <a href="https://astrowise.live" class="project-link" target="_blank">astrowise.live</a>
     </div>
-  </section>
+    <div class="project-card reveal" data-index="04">
+      <div>
+        <span class="project-badge badge-ai">ML · EMBEDDED</span>
+        <div class="project-name">TinyML Embedded Systems Suite</div>
+        <p class="project-desc">Three EML projects: food image CNN classification, real-time posture detection on Arduino Nano 33 BLE Sense, and keyword spotting — all deployed on resource-constrained microcontrollers.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">TinyML</span><span class="tag">Arduino</span><span class="tag">CNN</span><span class="tag">Keyword Spotting</span></div>
+      </div>
+      <a href="#" class="project-link">GitHub</a>
+    </div>
+    <div class="project-card reveal" data-index="05">
+      <div>
+        <span class="project-badge badge-hw">QUANTUM · GPU</span>
+        <div class="project-name">GPU-Accelerated Quantum Simulator</div>
+        <p class="project-desc">Quantum circuit simulator with CUDA/GPU acceleration at C-DAC. Optimized gate operation throughput for multi-qubit systems using parallel compute kernels.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">CUDA</span><span class="tag">Quantum Gates</span><span class="tag">C++</span><span class="tag">Parallelism</span></div>
+      </div>
+      <a href="#" class="project-link">Details</a>
+    </div>
+  </div>
+</section>
 
-  <footer class="text-center text-gray-500 text-sm">
-    © 2025 Gyan Pratipat — All rights reserved.
-  </footer>
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">03 · Timeline</div>
+  <h2 class="section-title">Experience</h2>
+  <p class="section-subtitle">From silicon labs to startup tech leads.</p>
+  <div class="timeline">
+    <div class="timeline-item tl-left reveal">
+      <div class="tl-meta">2025 – Present</div>
+      <div class="tl-role">Tech Lead / Programmer Analyst Developer</div>
+      <div class="tl-company">My Main AI Inc. · PassionMedia</div>
+      <p class="tl-desc">Led expansion from 3 to 6 engineers. Oversaw App Store submissions, AR camera pipelines (iOS/Android), AI music generation, coin economy design, and full platform architecture across Flutter + Laravel + AWS.</p>
+    </div>
+    <div class="timeline-item tl-right reveal">
+      <div class="tl-meta">2024 – Present</div>
+      <div class="tl-role">MS Computer Engineering</div>
+      <div class="tl-company">Arizona State University · Graduating May 2026</div>
+      <p class="tl-desc">Advanced coursework in Digital SoC Design (SystemVerilog, pipelined CPU, CAM cache), Advanced OS (xv6, virtual memory, hypervisor traps), and Embedded Machine Learning (TinyML, CNN, posture detection).</p>
+    </div>
+    <div class="timeline-item tl-left reveal">
+      <div class="tl-meta">2022 – 2024</div>
+      <div class="tl-role">Scientist B</div>
+      <div class="tl-company">C-DAC (Centre for Development of Advanced Computing)</div>
+      <p class="tl-desc">Quantum computing research with focus on GPU/CUDA acceleration. Built GPU-accelerated quantum simulators and worked on high-performance computing infrastructure.</p>
+    </div>
+    <div class="timeline-item tl-left reveal">
+      <div class="tl-meta">2021 – 2022</div>
+      <div class="tl-role">Software Engineer</div>
+      <div class="tl-company">Coherent Corp</div>
+      <p class="tl-desc">Systems software engineering role focused on embedded and hardware-adjacent software development in a photonics/semiconductor context.</p>
+    </div>
+    <div class="timeline-item tl-right reveal">
+      <div class="tl-meta">2017 – 2021</div>
+      <div class="tl-role">B.Tech, Electronics &amp; Communication Engineering</div>
+      <div class="tl-company">NIT Srinagar</div>
+      <p class="tl-desc">Foundation in electronics, signal processing, FPGA design, and embedded systems. Graduated with strong coursework in digital design and communication theory.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label" style="justify-content:center;">04 · Contact</div>
+  <h2 class="section-title" style="font-size:clamp(2rem,5vw,4rem);">Let's build<br>something real.</h2>
+  <p style="color:#5a7080;max-width:440px;margin:1rem auto 0;font-size:1rem;">
+    Open to hardware, systems, software and performance engineering roles. Also happy to talk startups, AI, or Vedic philosophy.
+  </p>
+  <a href="mailto:gyan.pratipat@gmail.com" class="contact-email">gyan.pratipat@gmail.com</a>
+  <div class="social-links">
+    <a href="https://github.com/gyanpratipat" target="_blank">github</a>
+    <a href="https://linkedin.com/in/gyanpratipat/" target="_blank">linkedin</a>
+    <a href="https://namasteceo.com" target="_blank">namasteceo.com</a>
+    <a href="https://astrowise.live" target="_blank">astrowise.live</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p><span class="status-dot"></span>Available for new grad roles · 2026</p>
+  <p>Built with intention — no frameworks, just code.</p>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // ── PHOTO SIZE: match heroLeft height ─────────────────────────
+  function sizePhoto() {
+    const left = document.getElementById('heroLeft');
+    const wrap = document.querySelector('.hero-photo-wrap');
+    if (!left || !wrap) return;
+    const h = left.offsetHeight;
+    wrap.style.height = h + 'px';
+    wrap.style.width  = h + 'px'; // square-ish (use h as width too for portrait feel)
+  }
+  // Run after fonts/layout settle
+  window.addEventListener('load', sizePhoto);
+  window.addEventListener('resize', sizePhoto);
+  setTimeout(sizePhoto, 300); // fallback for cached loads
+
+  // ── THEME TOGGLE ──────────────────────────────────────────────
+  // Uses body.light class — all overrides use !important so nothing can block them
+  const btn = document.getElementById('themeToggle');
+  let isLight = localStorage.getItem('portfolio-theme') === 'light';
+
+  function applyTheme() {
+    if (isLight) {
+      document.body.classList.add('light');
+      btn.textContent = '☀️';
+      btn.title = 'Switch to dark mode';
+    } else {
+      document.body.classList.remove('light');
+      btn.textContent = '🌙';
+      btn.title = 'Switch to light mode';
+    }
+  }
+
+  applyTheme();
+
+  btn.addEventListener('click', function() {
+    isLight = !isLight;
+    localStorage.setItem('portfolio-theme', isLight ? 'light' : 'dark');
+    applyTheme();
+  });
+
+  // ── SCROLL REVEAL ──────────────────────────────────────────────
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  reveals.forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
