@@ -51,7 +51,8 @@ body.light .t-val { color: #1a7a3a !important; }
 body.light .t-cursor { background: #0077aa !important; }
 body.light #skills { background: #e2eaf4 !important; }
 body.light #projects { background: #f0f4f8 !important; }
-body.light #experience { background: #e2eaf4 !important; }
+body.light #research { background: #e2eaf4 !important; }
+body.light #experience { background: #f0f4f8 !important; }
 body.light #contact { background: #f0f4f8 !important; }
 body.light footer { background: #f0f4f8 !important; border-top-color: rgba(0,140,180,0.18) !important; }
 body.light footer p { color: #7a90a0 !important; }
@@ -244,8 +245,9 @@ body.light .hero-photo { border-color: rgba(0,119,170,0.3); }
 section { padding: 6rem 4rem; transition: background 0.35s; }
 #skills { background: #070d1a; }
 #projects { background: #040810; }
-#experience { background: #070d1a; }
-#contact { background: #040810; text-align: center; position: relative; overflow: hidden; padding: 7rem 4rem; }
+#research { background: #070d1a; }
+#experience { background: #040810; }
+#contact { background: #070d1a; text-align: center; position: relative; overflow: hidden; padding: 7rem 4rem; }
 #contact::before {
   content: ''; position: absolute; bottom: -200px; left: 50%; transform: translateX(-50%);
   width: 800px; height: 400px;
@@ -307,6 +309,7 @@ section { padding: 6rem 4rem; transition: background 0.35s; }
 .badge-sw { background: rgba(0,200,255,0.1); color: #00c8ff; border: 1px solid rgba(0,200,255,0.2); }
 .badge-hw { background: rgba(255,179,71,0.1); color: #ffb347; border: 1px solid rgba(255,179,71,0.2); }
 .badge-ai { background: rgba(160,100,255,0.1); color: #c070ff; border: 1px solid rgba(160,100,255,0.2); }
+.badge-ver { background: rgba(0,230,118,0.1); color: #00e676; border: 1px solid rgba(0,230,118,0.2); }
 .project-name { font-family: 'Syne', sans-serif; font-size: 1.3rem; font-weight: 700; color: #eaf4ff; margin-bottom: 0.5rem; transition: color 0.35s; }
 .project-desc { color: #c8d8e8; font-size: 0.95rem; max-width: 600px; transition: color 0.35s; }
 .project-link {
@@ -451,6 +454,7 @@ footer p { font-family: 'Share Tech Mono', monospace; font-size: 0.88rem; font-w
   <ul class="nav-links">
     <li><a href="#skills">skills</a></li>
     <li><a href="#projects">projects</a></li>
+    <li><a href="#research">research</a></li>
     <li><a href="#experience">experience</a></li>
     <li><a href="#contact">contact</a></li>
   </ul>
@@ -630,17 +634,100 @@ footer p { font-family: 'Share Tech Mono', monospace; font-size: 0.88rem; font-w
       <div>
         <span class="project-badge badge-hw">QUANTUM · GPU</span>
         <div class="project-name">GPU-Accelerated Quantum Simulator</div>
-        <p class="project-desc">Quantum circuit simulator with CUDA/GPU acceleration at C-DAC. Optimized gate operation throughput for multi-qubit systems using parallel compute kernels.</p>
-        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">CUDA</span><span class="tag">Quantum Gates</span><span class="tag">C++</span><span class="tag">Parallelism</span></div>
+        <p class="project-desc">32-qubit state-vector simulator in C++/CUDA achieving 5× speedup over Xeon 6326 CPU on GHZ, QFT, and HHL benchmarks. Roofline analysis confirmed memory-bandwidth bound behavior (≤0.38 FLOP/byte) across 11 backends.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">CUDA</span><span class="tag">C++</span><span class="tag">OpenMP</span><span class="tag">Roofline Model</span></div>
       </div>
       <a href="#" class="project-link">Details</a>
+    </div>
+    <div class="project-card reveal" data-index="06">
+      <div>
+        <span class="project-badge badge-hw">CPU · PERF MODELING</span>
+        <div class="project-name">CPU Performance Modeling in Gem5</div>
+        <p class="project-desc">Implemented a 6-bit GShare branch predictor and custom LRU cache replacement policies inside the Gem5 simulator's C++ codebase. Achieved 93% branch prediction accuracy and 84% cache hit rate on Dijkstra and QuickSort benchmarks.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">Gem5</span><span class="tag">C++</span><span class="tag">RISC-V</span><span class="tag">Branch Prediction</span><span class="tag">LRU Cache</span></div>
+      </div>
+      <a href="#" class="project-link">GitHub</a>
+    </div>
+    <div class="project-card reveal" data-index="07">
+      <div>
+        <span class="project-badge badge-hw">FPGA · RTL</span>
+        <div class="project-name">FPGA Matrix Multiplication Accelerator</div>
+        <p class="project-desc">Synthesizable RTL matrix multiplier using pipelined MAC units in Verilog. Achieved 2× speedup over software with 20% latency reduction. Fixed-point arithmetic optimizations cut FPGA resource utilization by 30%.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">Verilog</span><span class="tag">Vivado</span><span class="tag">ModelSim</span><span class="tag">Fixed-Point</span><span class="tag">Pipelining</span></div>
+      </div>
+      <a href="#" class="project-link">GitHub</a>
+    </div>
+    <div class="project-card reveal" data-index="08">
+      <div>
+        <span class="project-badge badge-ai">ML · EDA</span>
+        <div class="project-name">IR Drop Prediction with UNet CNN</div>
+        <p class="project-desc">Data pipeline converting SPICE netlists into 2D feature maps (current density, PDN topology, voltage distance). Trained a UNet CNN for pixel-level IR drop prediction with voltage heatmap supervision — a full ML-EDA integration.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">PyTorch</span><span class="tag">UNet</span><span class="tag">SPICE</span><span class="tag">Verilog Parsing</span><span class="tag">NumPy</span></div>
+      </div>
+      <a href="#" class="project-link">GitHub</a>
+    </div>
+    <div class="project-card reveal" data-index="09">
+      <div>
+        <span class="project-badge badge-sw">EDA · TIMING</span>
+        <div class="project-name">Static Timing Analysis Tool for VLSI</div>
+        <p class="project-desc">Built from scratch: netlist parser, liberty file interpreter, and topological traversal for 100K+ gate circuits. Custom 2D delay interpolation with lookup tables reduced timing analysis time by 50% — no external EDA libraries used.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">Python</span><span class="tag">STA</span><span class="tag">Liberty Files</span><span class="tag">Graph Traversal</span></div>
+      </div>
+      <a href="#" class="project-link">GitHub</a>
+    </div>
+    <div class="project-card reveal" data-index="10">
+      <div>
+        <span class="project-badge badge-ver">VERIFICATION · UVM</span>
+        <div class="project-name">UVM Testbench for APB Protocol</div>
+        <p class="project-desc">Full UVM testbench for AMBA APB protocol verification. Constrained random test sequences achieved 95% functional coverage. Assertion-based verification caught 3 corner-case protocol violations in the DUT.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">SystemVerilog</span><span class="tag">UVM</span><span class="tag">APB</span><span class="tag">Assertions</span><span class="tag">Coverage</span></div>
+      </div>
+      <a href="#" class="project-link">GitHub</a>
+    </div>
+    <div class="project-card reveal" data-index="11">
+      <div>
+        <span class="project-badge badge-ver">VERIFICATION · FSM</span>
+        <div class="project-name">VeriChip State Machine Verification</div>
+        <p class="project-desc">Mutation-catching SystemVerilog testbenches for VeriChip FSM/ALU using VCS and Verdi. Verified NORMAL, ERROR, and EXPORT VIOLATION states with 72+ directed test sequences. Coverage model with 4 covergroups achieved full closure.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">SystemVerilog</span><span class="tag">UVM</span><span class="tag">VCS</span><span class="tag">Verdi</span><span class="tag">FSM</span></div>
+      </div>
+      <a href="#" class="project-link">GitHub</a>
+    </div>
+    <div class="project-card reveal" data-index="12">
+      <div>
+        <span class="project-badge badge-sw">OS · SYSTEMS</span>
+        <div class="project-name">xv6 OS Enhancements</div>
+        <p class="project-desc">Extended xv6 on RISC-V: ELF-parsing bootloader with M→S privilege transitions for dual-kernel boot, OS-assisted threading with priority scheduling (3 levels) for 8 threads/process, and a trap-and-emulate hypervisor emulating 5 privileged RISC-V instructions with TOR-PMP isolation.</p>
+        <div class="skill-tags" style="margin-top:1rem;"><span class="tag">C</span><span class="tag">RISC-V Assembly</span><span class="tag">xv6</span><span class="tag">Hypervisor</span><span class="tag">PMP</span></div>
+      </div>
+      <a href="#" class="project-link">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="section-label">03 · Research</div>
+  <h2 class="section-title">Preprint</h2>
+  <p class="section-subtitle">Sole-authored preprint from MS research at ASU — published May 2026.</p>
+  <div class="projects-list">
+    <div class="project-card reveal" data-index="✦">
+      <div>
+        <span class="project-badge badge-ai">PREPRINT · arXiv:2605.08792</span>
+        <div class="project-name">Memory Hierarchy Transitions in Quantum Circuit Simulation on Apple M4 Pro</div>
+        <p class="project-desc">A controlled study of how unified memory architecture affects quantum circuit simulation performance. Roofline analysis reveals memory-bandwidth bound behavior (arithmetic intensity ≤0.38 FLOP/byte) and a 4.46× performance jump at the 28→29 qubit threshold — benchmarked across 11 backends including Qiskit, Cirq, and cuStateVec.</p>
+        <div class="skill-tags" style="margin-top:1rem;">
+          <span class="tag">Quantum Simulation</span><span class="tag">Roofline Model</span><span class="tag">Apple Silicon</span><span class="tag">11 Backends</span><span class="tag">Memory Bandwidth</span>
+        </div>
+      </div>
+      <a href="https://arxiv.org/abs/2605.08792" class="project-link" target="_blank">arxiv.org/abs/2605.08792</a>
     </div>
   </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section id="experience">
-  <div class="section-label">03 · Timeline</div>
+  <div class="section-label">04 · Timeline</div>
   <h2 class="section-title">Experience</h2>
   <p class="section-subtitle">From silicon labs to startup tech leads.</p>
   <div class="timeline">
@@ -679,7 +766,7 @@ footer p { font-family: 'Share Tech Mono', monospace; font-size: 0.88rem; font-w
 
 <!-- CONTACT -->
 <section id="contact">
-  <div class="section-label" style="justify-content:center;">04 · Contact</div>
+  <div class="section-label" style="justify-content:center;">05 · Contact</div>
   <h2 class="section-title" style="font-size:clamp(2rem,5vw,4rem);">Let's build<br>something real.</h2>
   <p style="color:#5a7080;max-width:440px;margin:1rem auto 0;font-size:1rem;">
     Open to hardware, systems, software and performance engineering roles. Also happy to talk startups, AI, or Vedic philosophy.
